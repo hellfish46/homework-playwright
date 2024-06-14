@@ -78,4 +78,14 @@ function getLargerNumber(firstNumber, secondNumber){
         expect(result).rejects.toThrow("Second argument is out of min/max boundaries !");
     });
 
+    test("first argument not a number", async () => {
+        const result = getLargerNumber(null, 12);
+        expect(result).rejects.toThrow("First argument is not a number !");
+    });
+
+    test("second argument not a number", async () => {
+        const result = getLargerNumber(33, "234");
+        expect(result).rejects.toThrow("Second argument is not a number !");
+    });
+
     
