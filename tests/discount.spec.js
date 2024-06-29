@@ -28,4 +28,25 @@ function getDiscount(price, discountPercentage){
 };
 
 
+test("Calculate int discount", async () => {
+    const result = getDiscount(100, 20);
+    expect(result).toBe(80);
+});
+
+test("Calculate float price discount", async () => {
+    const result = getDiscount(50.8, 10);
+    expect(result).toBe(45.72);
+});
+
+test("Calculate float discount", async () => {
+    const result = getDiscount(300, 12.5);
+    expect(result).toBe(262.5);
+});
+
+test("Calculate negative price", async () => {
+    const result = getDiscount(-300, 12.5);
+    expect(result).toBe("Price <= 0 !");
+});
+
+
 

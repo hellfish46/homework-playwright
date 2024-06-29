@@ -27,3 +27,18 @@ function getDegree(degree){
         return getNumberFromString(degree) + 32;
     }
 }
+
+test("get C from F", async () => {
+    const result = getDegree("25C");
+    expect(result).toBe(57);
+});
+
+test("get F from C", async () => {
+    const result = getDegree("100F");
+    expect(result).toBe(68);
+});
+
+test("No char in string", async () => {
+    const result = getDegree("100");
+    expect(result).toBe("Not a temperature measure !");
+});
